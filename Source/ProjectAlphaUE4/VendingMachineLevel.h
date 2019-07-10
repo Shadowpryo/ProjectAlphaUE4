@@ -30,8 +30,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Level Stats")
 	int CurrentAmountOfEnemies;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Level Stats")
+	int ScoreToGetStar;
 
-
-
-	
 };

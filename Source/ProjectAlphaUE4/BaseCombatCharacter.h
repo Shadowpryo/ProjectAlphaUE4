@@ -4,14 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "AnimationHandler.h"
 #include "Animation/AnimMontage.h"
-#include "AttackNodes.h"
 #include "BaseCombatCharacter.generated.h"
 
-
-// Forward declaration
-class IAnimatoinHandler;
 
 
 UCLASS()
@@ -22,14 +17,6 @@ class PROJECTALPHAUE4_API ABaseCombatCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ABaseCombatCharacter();
-
-	/** Holds the root node of the combo tree.
-	*/
-	AttackNodes* ComboAttackRoot;
-
-	/** Holds the current attack that character is doing.
-	*/
-	AttackNodes* CurrentAttack;
 
 	/** Holds the upper body montage.
 	*/
@@ -63,7 +50,9 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "BaseCombatCharacter")
 	void OnAnimationEnd();
 
-	/** Holds the animation handler for this character.
-	*/
-	IAnimationHandler* CombatAnimationHandler;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Stats")
+	int MaxHP;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Stats")
+	int Health;
 };
